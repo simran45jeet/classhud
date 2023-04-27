@@ -1,0 +1,131 @@
+body {font-family: Roboto Condensed;background: #F5F5F5; padding: 0;margin: 0;text-align: center;}
+main {width: 100%;max-width: 450px;margin: 0 auto;font-size: 16px;line-height: 22px;color: #000;border-radius: 7px;box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.505);position: relative;}
+.top-card{background: white;padding-bottom: 10px;}
+.top-card .menu-icon {position: absolute;bottom: 13.7em;font-size: 17px;cursor: pointer;}
+.topredline{width: 100%;height: 10px;background: #E12829;}
+.verified{text-align: center; border: 0.4px solid #e8e8e8; border-radius: 50px; width: 200px; padding: 5px; margin: 10px auto;}
+.verified img{height:20px;margin-right:10px;}
+.verified span{font-weight: 600; font-size: 16px;}
+.buttontop{border-radius: 10px; box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px; padding: 25px;}
+.buttoncall{background-color: #E12829; color: white; padding: 10px 25px; border-radius: 5px; border: none; font-size: 15px;font-weight: 600;}
+.openmaps{background-color: #143B63; color: white; padding: 10px 25px; border-radius: 5px; margin-left: 10px; border: none; font-size: 15px;font-weight: 600;}
+.little{font-weight: 400; font-size: 30px; line-height: 59px; text-align: center; font-variant: all-small-caps; margin: 30px 0 0 0; color: #E12829;font-weight: 600;}
+.description{font-style: normal;font-weight: 500;font-size: 16px;text-align: justify;color: #6D7177;}
+.slidersection{background:#E12829;padding:50px 15px 10px 15px;}
+.infra{font-size:30px; text-align:center; font-variant:all-small-caps; color:#FFFFFF; margin:0;}
+.col{border:1px solid #e8e8e8;padding:5px;}
+.colimg{width: 60px; height: 60px;}
+.colh5{font-size: 17px;text-align: center;font-variant: all-small-caps;color: #000000;font-weight: 600;margin: 3px;line-height: 16px;}
+.top-card .menu-icon .item1 {margin-left: 10px;margin-top: 15px;color: red;}
+.top-card .menu-icon .item2 {float: right;margin-right: 20px;margin-top: -10px;color: blue;}
+.colmain{display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 0px; margin-bottom: 15px;}
+.card_details{background:#143B63;color:#D8DDE5;padding:20px;}
+.contactus{font-style: normal;font-weight: 400;font-size: 34px;line-height: 59px;text-align: center;font-variant: all-small-caps;color: #FFFFFF;margin: 0;letter-spacing: .5;}
+.contactdes{font-size: 21px;margin: 10px;}
+.contacticon{border: 2px solid #5FBBE3; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center;}
+ .contacticon i{color: white;}
+.contactinfo{text-align: left;margin-left:15px;}
+.textmail{font-size: 20px;margin: 0;text-align: left;margin-left: 20px;}
+.viewall{background-color: #E12829;color: white;padding: 11px 30px;border-radius: 40px;border: none;font-size: 14px;text-transform: uppercase;font-weight: 700;}
+.contactadd{display: grid; grid-template-columns: auto 1fr; grid-gap: 10px;   padding: 10px 20px;}
+h1 {font-size: 22px;color: #000;font-weight: 600;margin: 12px 0;text-align: center;}
+.row {padding: 1px 10px;display: flex;font-family: 'Roboto Condensed';}
+.row1 {padding: 15px 10px;display: flex;font-family: 'Roboto Condensed';}
+.col1{width:40%}
+.col2{width:60%}
+.container{border: 1px solid #b7b7b7;border-radius: 20px;background: none;}
+.e3_63 { height: 210px;background-repeat: no-repeat;background-size: cover;margin: 0 10px;background-position: center center}
+.photo {margin-bottom: -40px;height: 140px;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+.img {position: relative;top: -70px;max-width: 100%;max-height: 100%;border-radius: 50%;box-shadow: -1px 1px 11px 6px rgb(64 72 154 / 40%);}
+.e3_58 { color: #E12829;margin: 0;font-family: Roboto Condensed;text-align: center;font-size: 20px;letter-spacing: 0;margin-bottom:10px;text-transform: uppercase;}
+.e3_58:after {position: absolute;bottom: 0;left: 0;width: 60px;height: 3px;background: #2c7bfe;content: '';}
+.e3_57 { color: rgba(51.00000075995922, 51.00000075995922, 51.00000075995922, 1);margin: 5px 2px;font-family: Roboto Condensed;font-size: 24px;letter-spacing: 0;text-align: center;line-height: 27px;font-weight: 600;}
+.card {border: 1px solid #E8EBEC;border-radius: 12px;background: #e8ebec38;}
+ .cardmap {padding:10px 15px;background: #fff;}
+.directions{font-size: 34px;text-align: center;font-variant: all-small-caps;color: #E12829;}
+.cardimage{height:214px;width: 100%;border:0;border:2px;height:300px;}
+.e3_7{margin-bottom:2px;color: #9B9B9B;}
+.e3_90{margin-bottom:20px;color:#143B63;margin-top:-7px;font-size: 14px;}
+.footerpower{background:white;padding:10px;margin-top:10px;}
+.footerimg{margin-bottom:10px;  position: relative;  width: 180px;    height: 42px;}
+.card__details {/* Add space around the details */padding: 16px 8px 8px 8px;}
+.tag {font-family: 'Roboto Condensed';font-style: normal;font-weight: 400;font-size: 24px;line-height: 30px;color: #D8DDE5;}
+/* Style div elements that have class equal to name */.name {font-size: 24px;font-weight: 600;margin-top: 16px;}
+.las,.la{font-size: 30px!important;}
+/* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */.rating-group {display: inline-flex;}
+/* make hover effect work properly in IE */.rating__icon {pointer-events: none;}
+/* hide radio inputs */.rating__input {position: absolute !important;left: -9999px !important;}
+/* set icon padding and size */.rating__label {cursor: pointer;/* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */padding: 0 0.1em;font-size: 2rem;}
+/* add padding and positioning to half star labels */.rating__label--half {padding-right: 0;margin-right: -0.6em;z-index: 2;}
+/* set default star color */.rating__icon--star {color: orange;}
+/* set color of none icon when unchecked */.rating__icon--none {color: #eee;}
+/* if none icon is checked, make it red */.rating__input--none:checked + .rating__label .rating__icon--none {color: red;}
+/* if any input is checked, make its following siblings grey */.rating__input:checked ~ .rating__label .rating__icon--star {color: #ddd;}
+.rating {font-size: 20px;}
+.star:before {content: "â˜†";}
+.star.selected:before {content: "â˜…";}
+/* make all stars orange on rating group hover */.rating-group:hover .rating__label .rating__icon--star,.rating-group:hover .rating__label--half .rating__icon--star {color: orange;}
+/* make hovered input's following siblings grey on hover */.rating__input:hover ~ .rating__label .rating__icon--star,.rating__input:hover ~ .rating__label--half .rating__icon--star {color: #ddd;}
+/* make none icon grey on rating group hover */.rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {color: #eee;}
+/* make none icon red on hover */.rating__input--none:hover + .rating__label .rating__icon--none {color: red;}
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */.laicon{border-radius: 14px;margin: 0 10px;}
+.la-facebook{background-color: #3b5998;border-color: #3b5998;border-radius: 19px;padding: 7px;color:white;}
+.la-instagram{background-color: #bc2a8d;border-color: #bc2a8d;border-radius: 19px;padding: 7px;color:white;}
+.la-youtube{background-color: red;border-color: red;border-radius: 19px;padding: 7px;color:white;}
+.la-facebook:hover{background-color: #fff;border-color: #3b5998;border-radius: 19px;padding: 7px;color:#3b5998;}
+.la-instagram:hover{background-color: #fff;border-color: #bc2a8d;border-radius: 19px;padding: 7px;color:#bc2a8d;}
+.la-youtube:hover{background-color: #fff;border-color: red;border-radius: 19px;padding: 7px;color:red;}
+.row {display: flex;flex-wrap: wrap;}
+.column {width: 100%;padding: 0 1em 1em 1em;text-align: center;}
+.card1 {width: 100%;background: linear-gradient(#ffffff 50%, #2c7bfe 50%);background-size: 100% 200%;background-position: 0 2.5%;border-radius: 5px;box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);cursor: pointer;transition: 0.5s;}
+.icon-wrapper {background-color: #2c7bfe;position: relative;margin: 10px 20px;height: 2.5em;width: 2.5em;color: #ffffff;border-radius: 50%;display: grid;place-items: center;transition: 0.5s;}
+.card1:hover {background-position: 0 100%;}
+.card1:hover .icon-wrapper {background-color: #ffffff;color: #2c7bfe;}
+.card1:hover h3 {color: #ffffff;}
+.card1:hover p {color: #f0f0f0;}
+.rows{padding: 15px;border-bottom: 1px dashed #b7b7b7}
+footer {position: fixed;bottom: 0;width: 100%;height: 50px;background-color: #333;}
+.middle-card {margin: 0px 25px 10px 25px;background: white;text-align: justify;}
+.menu_bottom {background: white;width: -webkit-fill-available;text-align: center;color: #2e2c41;position: fixed;bottom: 0;left: 0;overflow-x: auto;}
+.menu_container {width: auto;text-align: left;display: flex;position: sticky;bottom: 0;background: #143B63;box-shadow: 2px 0px 6px 0px #143b6340;margin: 0 10px;}
+.menu_item{   text-align: center;font-weight: 600;display: inline-grid;font-size: 12px;margin: 15px 0;width: 209px;white-space: pre;color: white;}
+.menu_item i{font-size: 25px;}
+a{color: white;text-decoration: none;}
+.contact-wrap {background: #e8edf0;}
+.col-md-12 {-webkit-box-flex: 0;-ms-flex: 0 0 100%;flex: 0 0 100%;max-width: 100%;}
+.form-group {margin-bottom: 1rem;}
+.contactForm .label {color: #000;text-transform: uppercase;font-size: 12px;font-weight: 600;}
+#contactForm .form-control {font-size: 16px;width: 100%;}
+.contactForm .form-control {border: none;}
+.form-control {height: 44px;background: #fff;color: rgba(0, 0, 0, 0.8);font-size: 14px;border-radius: 2px;-webkit-box-shadow: none !important;box-shadow: none !important;border: none;outline: none;}
+.carousel {position: relative;height: 300px;}
+.carousel-inner {position: relative;width: 100%;overflow: hidden;margin-top: 30px;}
+.col-md-3{border: 1px solid #e8e8e8;text-align:center;padding: 10px;width:25%}
+.slider {position: relative;width: 100%;max-width: 800px;height: 280px;margin:20px 0px;}
+.slider-container {display: flex;width: 100%;overflow: hidden;}
+.slide {flex: 0 0 100%;transition: all 0.5s ease;}
+.slide img {width: 100%;height:240px;}
+.slider-arrows {position: absolute;top: 45%;transform: translateY(-50%);width: 100%;display: flex;justify-content: space-between;z-index: 1;}
+.slider-arrows button {background-color: #143b63c4;border: none;font-size: 2rem;cursor: pointer;color: #fff;padding: 1px 15px;border-radius: 50%;}
+.slider-dots {position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);display: flex;justify-content: center;z-index: 1;}
+.slider-dots button {background-color: rgba(255, 255, 255, 0.5);border: none;width: 10px;height: 10px;border-radius: 50%;margin: 0 10px;cursor: pointer;}
+.slider-dots button.active {background-color: rgba(255, 255, 255, 1);}
+.slide.active {flex: 0 0 100%;}
+.slide.prev {transform: translateX(-100%);}
+.slide.next {transform: translateX(100%);}
+.slide.prev.active,.slide.next.active {flex: 0 0 100%;}
+.slide.active + .slide {transform: translateX(100%);}
+.slide.active ~ .slide {transform: translateX(200%);}
+.slide.active ~ .slide.prev {transform: translateX(0%);}
+.slide.active ~ .slide.next {transform: translateX(300%);}
+.slide {transition: all 0.5s ease;display: none;}
+.slide.active {flex: 0 0 100%;display: flex;}
+.slide.prev {transform: translateX(-100%);}
+.slide.next {transform: translateX(100%);}
+.slide.prev.active,.slide.next.active {flex: 0 0 100%;}
+.slide.active + .slide {transform: translateX(100%);}
+.slide.active ~ .slide {transform: translateX(200%);}
+.slide.active ~ .slide.prev {transform: translateX(0%);}
+.slide.active ~ .slide.next {transform: translateX(300%);}
+
+.jq-ry-container{position:relative;padding:0 5px;line-height:0;display:block;cursor:pointer;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;direction:ltr}.jq-ry-container[readonly=readonly]{cursor:default}.jq-ry-container>.jq-ry-group-wrapper{position:relative;width:100%}.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group{position:relative;line-height:0;z-index:10;white-space:nowrap}.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group>svg{display:inline-block}.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group.jq-ry-normal-group{width:100%}.jq-ry-container>.jq-ry-group-wrapper>.jq-ry-group.jq-ry-rated-group{width:0;z-index:11;position:absolute;top:0;left:0;overflow:hidden}

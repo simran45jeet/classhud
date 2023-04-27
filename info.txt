@@ -1,0 +1,34 @@
++===================================+
+| New Account Info                  |
++===================================+
+| Domain: classhud.in
+| Ip: 192.185.100.100 
+| HasCgi: y
+| UserName: classhuu
+| PassWord: LkZZOFXA_S34
+| CpanelMod: jupiter
+| HomeRoot: /home2
+| Quota: 200 MB
+| NameServer1: ns1.hostingfry.com
+| NameServer2: ns2.hostingfry.com
+| NameServer3: 
+| NameServer4: 
+| Contact Email: 
+| Package: smart_200MB
+| Feature List: default
+| Account Enhancements: None
+| Language: en
++===================================+
+...Done
+
+
+db   : classhuu_classhud
+user : classhuu_classhud
+pass : i2]OwV&D{$89
+
+
+
+ftp:
+user  : classhud_ftp@classhud.in
+server : classhud.in
+password : 4fTQWe}+7U7{

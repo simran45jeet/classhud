@@ -1,0 +1,7 @@
+User-Agent: bingbot
+Disallow: /
+
+User-Agent: *
+Allow: /
+
+
