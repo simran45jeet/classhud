@@ -19,4 +19,3 @@ application/logs/*
 
 assets/media/*
 application/config/database.php
-application/config/constants.php
