@@ -287,6 +287,21 @@
                                 <div class="row mb-5">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
+                                        <label class="fs-5 fw-semibold mb-2"><?php echo $this->lang->line("heading_qrcode_title") ?></label>
+                                        <select class="form-select form-select-solid" name="qrcode" data-control="select2">
+                                            <option value=""><?php echo $this->lang->line("heading_qrcode_title") ?></option>
+                                            <?php 
+                                            if( !empty($qrcodes) ) {
+                                                foreach ($qrcodes as $key => $qrcode) {
+                                            ?>
+                                            <option value="<?php echo encrypt($qrcode["id"]) ?>" <?php echo (!empty($post_data['qrcode']) && decrypt($post_data['qrcode']) == $qrcode["id"]) ? "selected=''" : ""; ?>><?php echo $qrcode["qrcode"] ?></option>
+                                            <?php } 
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 fv-row">
+                                        <!--begin::Label-->
                                         <label class="fs-5 fw-semibold mb-2"><?php echo $this->lang->line("heading_status") ?></label>
                                         <div class="form-check form-switch form-check-custom form-check-solid">
                                             <div class="form-check form-switch form-check-custom form-check-solid">
@@ -295,7 +310,10 @@
 
                                         </div>
                                     </div>
-                                    <?php if( isset($claim_option) && $claim_option==true ){ ?>
+                                    
+                                </div>
+                                <?php if( isset($claim_option) && $claim_option==true ){ ?>
+                                <div class="row mb-5">
                                     <div class="col-md-6 fv-row">
                                         <!--begin::Label-->
                                         <label class="fs-5 fw-semibold mb-2"><?php echo $this->lang->line("heading_listing_claimable_title") ?></label>
@@ -306,8 +324,8 @@
 
                                         </div>
                                     </div>
-                                    <?php } ?>
                                 </div>
+                                <?php } ?>
                                 <div class="row mb-5">
 
                                     <div class="col-md-6 fv-row">

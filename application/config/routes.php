@@ -64,4 +64,5 @@ $route['best/(:any)/(:any)']='listing/detail/$2';
 $route['best/(:any)/(:any)/(:any)']='listing/detail/$2';
 $route['blogs/(:num)']='blogs/index/$1';
 $route['ecard/(:any)']='listing/listing_ecard/$1';
+$route['qrcode/(:any)']='qrcodes/index/$1';
 ?>

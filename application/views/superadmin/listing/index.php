@@ -248,6 +248,7 @@ $add_order_permission =  hasPermission($this->user_data['group_id'],"{$controlle
                     <th class="min-w-125px"><?php echo $this->lang->line("heading_listing_type") ?></th>
                     <th class="min-w-125px"><?php echo $this->lang->line("heading_email") ?></th>
                     <th class="min-w-125px"><?php echo $this->lang->line("heading_phone_no") ?></th>
+                    <th class="min-w-125px"><?php echo $this->lang->line("heading_listing_user_title") ?></th>
                     <th class="text-end min-w-70px"><?php echo $this->lang->line("heading_action") ?></th>
                 </tr>
                 <!--end::Table row-->
@@ -265,9 +266,11 @@ $add_order_permission =  hasPermission($this->user_data['group_id'],"{$controlle
                     <td>
                         <div class="d-flex align-items-center">
                             <!--begin::Thumbnail-->
+                            <!--
                             <a href="<?php echo $edit_permission ? superadmin_url("{$controller_name}/edit/{$encoded_id}") : "#"; ?>" class="symbol symbol-50px">
                                 <span class="symbol-label" style="background-image:url('<?php echo base_url(BASE_LISTING_LOGO_PATH."{$record["logo"]}") ?>');"></span>
                             </a>
+                            -->
                             <!--end::Thumbnail-->
                             <div class="ms-5">
                                 <!--begin::Title-->
@@ -280,6 +283,7 @@ $add_order_permission =  hasPermission($this->user_data['group_id'],"{$controlle
                     <td><?php echo $record['listing_type_name'] ?></td>
                     <td><?php echo $record['primary_email'] ?></td>
                     <td><?php echo $record['primary_phone_no'] ?></td>
+                    <td><?php echo $record['created_by'] ?></td>
                     <td class="text-end">
                         <a href="#" class="btn btn-sm btn-light btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->

@@ -519,13 +519,12 @@ class Listing_main extends MY_Controller {
     }
     public function get_record($encoded_id="",$slug="",$post_data=array()){
         $listing_id = decrypt($encoded_id);
-
         $record = $this->listing->get_record($listing_id,$slug)["record"];
-        
         if( !empty($record) ) {
             $record["name"] = stripcslashes($record["name"]);
             $record["address"] = stripcslashes($record["address"]);
             $record["listing_id"] = encrypt($record["id"]);
+            $record["qrcode"] = !empty($record["qrcode"]) ? encrypt($record["qrcode"]) : "";
             $listing_id = $record["id"];
             
             $this->load->model("listing_email_model","listing_email");
@@ -948,6 +947,10 @@ class Listing_main extends MY_Controller {
         $items = array("name","listing_type","name","primary_email","primary_phone_code","primary_phone_no","primary_whatsapp_code","primary_whatsapp_no","website","address","country","state","city","google_location","full_address","place_id","longitude","latitude","zip_code","description","meta_title","meta_keywords","meta_description","video","landline","google_virtual_map");
         if( $this->user_data["group_id"]==SUPERADMIN_GROUP_ID || !empty($this->user_data["is_staff"])) {
             $items[]="status";
+            if( !empty($post_data["qrcode"]) ) {
+                $items[]="qrcode";
+                $post_data["qrcode"] = decrypt($post_data["qrcode"]);
+            }
         }
         if( !empty($listing_id) && empty($post_data["logo"]) ) {
         }else{

@@ -144,6 +144,7 @@ define('API_BASE_URL','http://localhost:3000/');
 define('BASE_USER_IMAGE_PATH', BASE_MEDIA_PATH."uploads/users/");
 define('BASE_LISTING_LOGO_PATH', BASE_MEDIA_PATH."uploads/listing/logo/");
 define('BASE_LISTING_COVER_IMAGE_PATH', BASE_MEDIA_PATH."uploads/listing/cover_image/");
+define('BASE_QRCODE_IMAGE_PATH', BASE_MEDIA_PATH."uploads/qrcode/");
 
 define('BASE_DRAFT_LISTING_LOGO_PATH', BASE_MEDIA_PATH."uploads/listing/draft/logo/");
 define('BASE_DRAFT_LISTING_COVER_IMAGE_PATH', BASE_MEDIA_PATH."uploads/listing/draft/cover_image/");
@@ -377,3 +378,5 @@ define('LISTING_LOGO_POSITION_TOP_RIGHT', '3');
 define("ENQUIRY_STATUS_PENDING","1");
 define("ENQUIRY_STATUS_SOLVED","2");
 define("ENQUIRY_STATUS_REJECTED","0");
+
+define("QRCODE_TYPE_LISTING",1);

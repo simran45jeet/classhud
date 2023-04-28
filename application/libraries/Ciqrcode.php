@@ -20,19 +20,19 @@ class Ciqrcode
 	var $size = 1024;
 	
 	function __construct($config = array()) {
-		// call original library
-		include "qrcode/qrconst.php";
-		include "qrcode/qrtools.php";
-		include "qrcode/qrspec.php";
-		include "qrcode/qrimage.php";
-		include "qrcode/qrinput.php";
-		include "qrcode/qrbitstream.php";
-		include "qrcode/qrsplit.php";
-		include "qrcode/qrrscode.php";
-		include "qrcode/qrmask.php";
-		include "qrcode/qrencode.php";
-		
-		$this->initialize($config);
+            // call original library
+            include "qrcode/qrconst.php";
+            include "qrcode/qrtools.php";
+            include "qrcode/qrspec.php";
+            include "qrcode/qrimage.php";
+            include "qrcode/qrinput.php";
+            include "qrcode/qrbitstream.php";
+            include "qrcode/qrsplit.php";
+            include "qrcode/qrrscode.php";
+            include "qrcode/qrmask.php";
+            include "qrcode/qrencode.php";
+
+            $this->initialize($config);
 	}
 	
 	public function initialize($config = array()) {

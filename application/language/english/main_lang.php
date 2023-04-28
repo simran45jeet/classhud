@@ -254,7 +254,21 @@ $lang["heading_enable"]="Active";
 $lang["heading_disable"]="Inactive";
 $lang["heading_yes"]="Yes";
 $lang["heading_no"]="No";
+
+$lang["message_invalid_integer_no"]="The value is not a valid integer number";
+$lang["message_value_greater_then"]="The value must be greater than or equal to %s";
 /***************superadmin common***************/
+
+/***************qrcode common***************/
+$lang["heading_qrcodes_title"]="Qr Codes";
+$lang["heading_qrcode_title"]="Qr Code";
+$lang["heading_qrcode_type_title"]="Type";
+$lang["heading_qrcode_generate_no_title"] = "No. Of Qrcode to generate";
+$lang["heading_qrcodes_type_names"]=array(
+	QRCODE_TYPE_LISTING=>"Listing",
+);
+$lang["message_qrcode_generate_success"] = "Qrcode Generated Successfully";
+/***************qrcode common***************/
 /***************eof superadmin translation***************/
 
 

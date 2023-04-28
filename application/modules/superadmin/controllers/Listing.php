@@ -36,6 +36,7 @@ class Listing extends MY_Controller
         $post_data = $this->get_data;
         $post_data["request_status"] = LISTING_REQUEST_STATUS_APPROVED;
         $post_data["all_records"] = true;
+        
         $records = $this->listing->get_records($post_data,true,$page_no);
         $count = $records['count'];
         $base_url = superadmin_url("{$this->controller_name}/index");
@@ -63,6 +64,8 @@ class Listing extends MY_Controller
         if( count($this->data["countries"])==1 ) {
             $this->data["states"] = $this->state->get_records($this->data["countries"][0]["id"],$post_data,false)["records"];
         }
+        $this->load->model("qrcodes_model","qrcodes");
+        $this->data["qrcodes"] = $this->qrcodes->get_records(array("unused_code"=>true),false)["records"];
         
         $this->data["cover_image_required"]=$this->data["logo_required"]=true;
         $this->data["social_medias"] = $this->social_media->get_records($post_data,false)["records"];
@@ -142,7 +145,13 @@ class Listing extends MY_Controller
         $listing_id = decrypt($edited_id);
         $this->load->module("main/listing_main");
         $record = $this->listing_main->get_record($edited_id)['data'];
-        
+        if( !empty($record["qrcode_value"])  ) {
+            
+            $this->data["qrcodes"][] = $this->qrcodes->get_record($record["qrcode_value"])["record"];
+        }else{
+            $this->load->model("qrcodes_model","qrcodes");
+            $this->data["qrcodes"] = $this->qrcodes->get_records(array("unused_code"=>true),false)["records"];
+        }
         if(empty($record)) {
             error($this->lang->line('message_no_records'));
             redirect(superadmin_url("{$this->controller_name}"));
@@ -167,6 +176,7 @@ class Listing extends MY_Controller
             $this->data["add_social_media"] = !empty($this->post_data["add_social_media"]) ? $this->post_data["add_social_media"] : array() ;
             $this->data["social_media"] = !empty($this->post_data["social_media"]) ? $this->post_data["social_media"] : array() ;
             $this->data["social_media_id"] = !empty($this->post_data["social_media_id"]) ? $this->post_data["social_media_id"] : array() ;
+            
             
             if( !empty($this->post_data) ) {
                 $this->load->module("main/listing_main");
@@ -250,7 +260,8 @@ class Listing extends MY_Controller
                 
                 $this->data["post_data"] = $record;
             }
-
+            
+            
         }
         $this->data["scripts"] = array(
             array(

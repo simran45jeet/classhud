@@ -5,6 +5,7 @@ class listing_model extends MY_Model {
         parent::__construct();
         $this->table_name = "tbl_listing";
         $this->table_title = "Listing";
+        
     }
     
     public function get_records($post_data=array(),$pagination = false,$page_no=1 ) {
@@ -17,12 +18,14 @@ class listing_model extends MY_Model {
         $this->load->model("listing_types_model","listing_types");
         $this->load->model("phone_code_model","phone_code");
         $this->load->model("city_model","city");
+        $this->load->model("users_model","users");
         //Get Restaurant List
-        $record_sql = $this->db->distinct()->select("l.*,t.name as listing_type_name,t.image as listing_type_image,pc.phonecode as primary_phone_code_name,c.name as city_name",false)
+        $record_sql = $this->db->distinct()->select("l.*,t.name as listing_type_name,t.image as listing_type_image,pc.phonecode as primary_phone_code_name,c.name as city_name,u.full_name as created_by",false)
                 ->from($this->table_name." l")
                 ->join($this->listing_types->table_name." t","t.id = l.listing_type","left")
                 ->join($this->phone_code->table_name." pc","pc.id = l.primary_phone_code","left")
                 ->join($this->city->table_name." c","c.id = l.city","left")
+                ->join($this->users->table_name." u","u.id=l.created_by","left")
                 ->where( array("l.is_deleted"=>NOT_DELETED) );
         
         if( isset($post_data["all_records"]) && $post_data["all_records"]==true ){
@@ -112,9 +115,10 @@ class listing_model extends MY_Model {
         $this->load->model("listing_claim_request_model","listing_claim_request");
         $this->load->model("listing_reviews_model","listing_reviews");
         $this->load->model("users_model","users");
+        $this->load->model("qrcodes_model","qrcodes");
         
         //Get Restaurant List
-        $record_sql = $this->db->distinct()->select("l.*,ot.name as listing_type_name,ot.image as listing_type_image,pc.phonecode as primary_phone_code_name,pc2.phonecode as primary_whatsapp_code_name,c.name as city_name,SUBSTRING_INDEX(group_concat(lcr.id),',',1) as listing_claim_request_id,count(lr.id) as total_review ,avg(lr.rating) as average_rating,u.phone_no user_phone_no,pc3.phonecode as user_phone_code",false)
+        $record_sql = $this->db->distinct()->select("l.*,ot.name as listing_type_name,ot.image as listing_type_image,pc.phonecode as primary_phone_code_name,pc2.phonecode as primary_whatsapp_code_name,c.name as city_name,SUBSTRING_INDEX(group_concat(lcr.id),',',1) as listing_claim_request_id,count(lr.id) as total_review ,avg(lr.rating) as average_rating,u.phone_no user_phone_no,pc3.phonecode as user_phone_code,qr.qrcode as qrcode_value,qr.image as qrcode_image",false)
                 ->from($this->table_name." l")
                 ->join($this->organization_types->table_name." ot","ot.id = l.listing_type","left")
                 ->join($this->phone_code->table_name." pc","pc.id = l.primary_phone_code","left")
@@ -124,6 +128,7 @@ class listing_model extends MY_Model {
                 ->join($this->listing_reviews->table_name." lr","lr.table_id = l.id and lr.type=".REVIEW_TYPES_LISTING." and lr.status=1 and lr.request_status=".REVIEW_STATUS_APPROVE,"left")
                 ->join($this->users->table_name." u","u.id = l.user_id ","left")
                 ->join($this->phone_code->table_name." pc3","pc3.id = u.phone_code ","left")
+                ->join($this->qrcodes->table_name." qr","qr.id = l.qrcode","left")
                 ->where( array("l.is_deleted"=>NOT_DELETED) )
                 ->having("l.id is not ",NULL);
         if( !empty($slug) ) {

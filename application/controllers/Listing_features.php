@@ -245,7 +245,6 @@ class Listing_features extends MY_Controller {
     public function listing_certificate(){
         $pacakages = array("ecard"=>PRODUCT_PACKAGE_TYPE_CERTIFICATE);
         $paid_order_packages = $this->listing_main->get_paid_listing($this->user_data["id"],$pacakages );
-        __print($paid_order_packages);
         if( $paid_order_packages["flag"]==FLAG_SUCCESS ) {
             $pacakages = array("ecard"=>PRODUCT_PACKAGE_TYPE_ECARD);
             foreach( $paid_order_packages["data"] as $key=>$listing_packages ){
@@ -264,21 +263,74 @@ class Listing_features extends MY_Controller {
             $this->data["records"] = $paid_order_packages["data"];   
         }
         
-        $this->layout->view("{$this->module_name}/listing_features/listing_ecard",$this->data);
+        $this->layout->view("{$this->module_name}/listing_features/listing_certificate",$this->data);
     }
     
     public function download_certificate($encoded_id){
         $listing_id = decrypt($encoded_id);
-        $paid_listing = $this->listing_main->is_paid_listing($encoded_id,PRODUCT_PACKAGE_TYPE_ECARD);
-//        __print($paid_listing);
+        $paid_listing = $this->listing_main->is_paid_listing($encoded_id,PRODUCT_PACKAGE_TYPE_CERTIFICATE);
+        
         if( $paid_listing["flag"]==FLAG_SUCCESS ) {
             $this->data["record"] = $this->listing_main->get_record($encoded_id)["data"];
-            $this->data["download"] = true;
-            $this->load->view("{$this->module_name}/listing_features/download_ecard",$this->data);
-            $this->listing_main->package_log_id($paid_listing["data"]["order_id"],$encoded_id,PRODUCT_PACKAGE_TYPE_ECARD);
+            
+            $font_file = FCPATH.BASE_WEB_FONTS_PATH . "/Khand-Bold.ttf"; // CHANGE TO YOUR OWN!
+            $banner_image = BASE_WEB_IMAGES_PATH."certificate-classhud.jpg";
+            $dest = imagecreatefromjpeg(FCPATH.$banner_image);
+
+            $image_width = imagesx($dest);
+            $image_height = imagesy($dest);
+            $angle = 0;
+            
+            /*write Text*/
+            $font_size = 60;
+            $text_box = imagettfbbox( $font_size, $angle, $font_file, $this->data["record"]["name"] );            
+            $text_width = $text_box[2] - $text_box[0];
+            $text_height = $text_box[7] - $text_box[1];
+            $pos_y = 735;
+            //$font_color = imagecolorallocate($dest, 255, 255, 255);;//white
+            $color = $this->__hexToRgb("#9B6F27");
+            $font_color = imagecolorallocate($dest, $color['r'], $color['g'], $color['b']);
+            //$pos_x = 0;                 
+            $pos_x = ($image_width/2) - ($text_width/2);
+            imagettftext($dest, $font_size, $angle, $pos_x, $pos_y, $font_color, $font_file, $this->data["record"]["name"] );
+            /*write Text 1*/
+            
+            /*print qrcode*/
+            if( !empty($this->data["record"]["qrcode_image"]) ) {
+                
+                $src = imagecreatefrompng(base_url(BASE_QRCODE_IMAGE_PATH.$this->data["record"]["qrcode_image"]));
+                $srcNew = imagecreatetruecolor(262, 262);
+                imagecopyresampled($srcNew, $src, 0, 0, 0, 0, 262, 262, 450, 450);
+                // Copy and merge
+                imagecopymerge($dest, $srcNew, 1038, 1240, 0, 0, 262, 262, 100);
+            }
+            /*print qrcode*/
+            
+            header("Content-Type: image/jpeg");
+            imagejpeg($dest);
+            die;
+            $this->listing_main->package_log_id($paid_listing["data"]["order_id"],$encoded_id,PRODUCT_PACKAGE_TYPE_CERTIFICATE);
         }else{
             redirect("dashboard");
         }
+    }
+    private function __hexToRgb($color) {
+        $color = trim($color);
+        $result = false;
+
+        $hex = str_replace('#', '', $color);
+        if (!$hex)
+            return array('r' => 0, 'g' => 0, 'b' => 0);
+        if (strlen($hex) == 3) {
+            $result['r'] = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+            $result['g'] = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+            $result['b'] = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
+        } else {
+            $result['r'] = hexdec(substr($hex, 0, 2));
+            $result['g'] = hexdec(substr($hex, 2, 2));
+            $result['b'] = hexdec(substr($hex, 4, 2));
+        }
+        return $result;
     }
     /*certificate*/
 }
